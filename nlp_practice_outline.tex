@@ -1,0 +1,156 @@
+\documentclass[10pt,aspectratio=43,mathserif,table]{beamer} 
+%设置为 Beamer 文档类型，设置字体为 10pt，长宽比为16:9，数学字体为 serif 风格
+\batchmode
+
+\usepackage{graphicx}
+\usepackage{animate}
+\usepackage{hyperref}
+
+%导入一些用到的宏包
+\usepackage{amsmath,bm,amsfonts,amssymb,enumerate,epsfig,bbm,calc,color,ifthen,capt-of,multimedia,hyperref}
+\usepackage{xeCJK} %导入中文包
+%\setCJKmainfont{SimHei} %字体采用黑体  Microsoft YaHei
+\setCJKmainfont{WenQuanYi Micro Hei} %字体采用黑体  Microsoft YaHei
+
+\usetheme{Berlin} %主题
+\usecolortheme{sustech} %主题颜色
+
+\usepackage[ruled,linesnumbered]{algorithm2e}
+
+\usepackage{fancybox}
+\usepackage{xcolor}
+\usepackage{times}
+\usepackage{listings}
+
+\usepackage{booktabs}
+\usepackage{colortbl}
+
+\newcommand{\Console}{Console}
+\lstset{ %
+	backgroundcolor=\color{white},   % choose the background color
+	basicstyle=\footnotesize\rmfamily,     % size of fonts used for the code
+	columns=fullflexible,
+	breaklines=true,                 % automatic line breaking only at whitespace
+	captionpos=b,                    % sets the caption-position to bottom
+	tabsize=4,
+	commentstyle=\color{mygreen},    % comment style
+	escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+	keywordstyle=\color{blue},       % keyword style
+	stringstyle=\color{mymauve}\ttfamily,     % string literal style
+	numbers=left, 
+	%	frame=single,
+	rulesepcolor=\color{red!20!green!20!blue!20},
+	% identifierstyle=\color{red},
+	language=c
+}
+
+%\setsansfont{Microsoft YaHei}
+%\setmainfont{Microsoft YaHei}
+
+\setsansfont{WenQuanYi Micro Hei}
+\setmainfont{WenQuanYi Micro Hei}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{mygray}{gray}{.9}
+\definecolor{mypink}{rgb}{.99,.91,.95}
+\definecolor{mycyan}{cmyk}{.3,0,0,0}
+
+%题目，作者，学校，日期
+\title{NLP 实战课程}
+\subtitle{\fontsize{9pt}{14pt}\textbf{}}
+\author{丁贵金}
+\institute{\fontsize{8pt}{14pt}草稿}
+\date{\today}
+
+%学校Logo
+%\pgfdeclareimage[height=0.5cm]{sustech-logo}{sustech-logo.pdf}
+%\logo{\pgfuseimage{sustech-logo}\hspace*{0.3cm}}
+
+%%\AtBeginSection[]
+%%{
+%%	\begin{frame}<beamer>
+%%	\frametitle{\textbf{目录}}
+%%	\tableofcontents[currentsection]
+%%\end{frame}
+%%}
+\beamerdefaultoverlayspecification{<+->}
+% -----------------------------------------------------------------------------
+\begin{document}
+% -----------------------------------------------------------------------------
+
+\frame{\titlepage}
+
+\section[目录]{}   %目录
+\begin{frame}{目录}
+\tableofcontents
+\end{frame}
+
+% -----------------------------------------------------------------------------
+
+
+\section{语音识别后处理} 
+
+\begin{frame}{标点预测}
+	语音识别的文本是没有标点的，要通过标点恢复/预测重新添加标点。
+\begin{block}{}
+	计划课时
+	\begin{itemize}
+		\item<0-> 2 小时
+	\end{itemize}
+
+	授课目的
+	\begin{itemize}
+		\item<0-> 深入理解BERT的FINETUNING/LSTM
+	\end{itemize}
+
+	预备知识
+	\begin{itemize}
+		\item<0-> BERT/TRANSFORMER/ATTENTION/EMBEDDING/LANGUAGE MODEL/LSTM/RNN
+	\end{itemize}
+
+	授课计划
+	\begin{itemize}
+		\item<0-> 原理介绍(BERT FINETUNING / LSTM)
+		\item<0-> 代码讲解/演示训练/推理过程
+		\item<0-> 探讨通过BERT进行其它文本任务和其他语音识别过程中NLP任务（提取/生成/热词）
+	\end{itemize}
+
+\end{block}
+\end{frame}
+
+
+\section{RASA ChatBot} 
+
+\begin{frame}{ChatBot}
+ChatBot 涉及的问题非常广，目前没有完美解决方案，通过 RASA 系统的实践，了解对话系统相关的任务和现状。
+\begin{block}{}
+	计划课时
+	\begin{itemize}
+		\item<0-> 4 小时
+	\end{itemize}
+
+	授课目的
+	\begin{itemize}
+		\item<0-> 通过实践 RASA 了解当下对话系统的基本构成，所要解决的问题。
+	\end{itemize}
+
+	预备知识
+	\begin{itemize}
+		\item<0-> Python
+	\end{itemize}
+
+	授课计划
+	\begin{itemize}
+		\item<0-> Demo RASA 工作流程
+		\item<0-> 代码讲解
+		\item<0-> 探讨改进的可能（通过集成BERT获取更好的词语表示等）
+	\end{itemize}
+
+\end{block}
+\end{frame}
+
+
+% -----------------------------------------------------------------------------
+\end{document}
+%文档结束
